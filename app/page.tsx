@@ -71,17 +71,16 @@ export default function ScrollyTellingPage() {
   ) => {
     if (isFreeRoam) {
       setter(val);
-      spring.set(val, false); // false = no animation, instant update
+      spring.set(val); // instant update
     } else {
       spring.set(val);
     }
   };
 
   return (
-      // ... (Rest of your JSX return logic is perfect, no changes needed) ...
       <div className="bg-[#020617] text-white font-sans selection:bg-emerald-500/30 overflow-x-hidden">
       
-      {/* 1. HERO SECTION */}
+      {/* 1.main sec */}
       <section className="h-screen flex flex-col items-center justify-center relative border-b border-white/5 z-30 bg-[#020617]">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] from-indigo-900/20 via-[#020617] to-[#020617]" />
         <motion.div 
@@ -103,14 +102,14 @@ export default function ScrollyTellingPage() {
       {/* 2. SPLIT LAYOUT CONTAINER */}
       <div ref={containerRef} className="relative min-h-[500vh]">
         
-        {/* RIGHT COLUMN: FIXED DASHBOARD */}
+        {/* fixed right part */}
         <div className="hidden lg:flex fixed top-0 right-0 w-[65%] h-screen items-center justify-center p-8 bg-[#020617] z-10 border-l border-white/5">
            <div className="w-full max-w-5xl bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[2rem] shadow-2xl overflow-hidden relative flex flex-col">
               
               <div className="p-8 grid grid-cols-12 gap-8 h-full">
                  <div className="col-span-4 space-y-8 flex flex-col justify-center">
                     
-                    {/* Header with Badge Inline */}
+                    {/* header */}
                     <div className="flex flex-col gap-2 mb-4">
                       <div className="flex items-center justify-between">
                          <h3 className="text-sm font-bold text-slate-500 uppercase tracking-widest">Policy Controls</h3>
@@ -172,7 +171,7 @@ export default function ScrollyTellingPage() {
            </div>
         </div>
 
-        {/* LEFT COLUMN: SCROLLING NARRATIVE */}
+        {/* left col scrolly */}
         <div className="w-full lg:w-[35%] relative z-20 pointer-events-none lg:pointer-events-auto px-4 lg:pl-12 lg:pr-4 pt-[50vh]">
           
           <StoryStep>
