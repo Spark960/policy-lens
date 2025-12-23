@@ -1,5 +1,5 @@
 "use client";
-
+//backup ai gen thing if your retarded brain fails
 import React, { useState, useMemo } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { AreaChart, Area, Tooltip, ResponsiveContainer } from "recharts";

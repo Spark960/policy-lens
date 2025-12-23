@@ -3,7 +3,7 @@
 import React, { useState, useRef, useMemo, useEffect } from "react";
 // FIX: Imported MotionValue type
 import { motion, useScroll, useSpring, useMotionValueEvent, MotionValue } from "framer-motion"; 
-import { User, Tractor, Briefcase, ChevronDown, ShieldAlert, Unlock, ShoppingCart } from "lucide-react";
+import { User, Tractor, Briefcase, ChevronDown, ShieldAlert, Unlock } from "lucide-react";
 import ImpactChart from "@/components/ImpactChart";
 import { calculateImpact, formatCurrency, cn } from "@/lib/utils";
 
@@ -63,7 +63,6 @@ export default function ScrollyTellingPage() {
     }
   });
 
-  // FIX: Typed 'spring' as MotionValue<number>
   const handleManualChange = (
     setter: React.Dispatch<React.SetStateAction<number>>, 
     spring: MotionValue<number>, 
@@ -71,7 +70,7 @@ export default function ScrollyTellingPage() {
   ) => {
     if (isFreeRoam) {
       setter(val);
-      spring.set(val); // instant update
+      spring.set(val); 
     } else {
       spring.set(val);
     }
@@ -224,8 +223,6 @@ export default function ScrollyTellingPage() {
     </div>
   );
 }
-
-// --- SUBCOMPONENTS (Keep these at the bottom of the file) ---
 
 const StoryStep = ({ children }: { children: React.ReactNode }) => (
   <div className="h-screen flex flex-col justify-center pointer-events-auto">

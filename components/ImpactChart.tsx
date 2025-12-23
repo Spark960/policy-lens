@@ -58,7 +58,6 @@ export default function ImpactChart({ data }: ChartProps) {
             <XAxis dataKey="month" stroke="#64748b" tick={{fontSize: 10}} axisLine={false} tickLine={false} />
             <Tooltip
               contentStyle={{ backgroundColor: '#0f172a', border: '1px solid #1e293b', fontSize: '12px' }}
-              // FIX: Accept undefined, number, or string. Fallback to 0 if undefined.
               formatter={(value: number | string | undefined) => [
                 formatCurrency(Number(value || 0)), 
                 "Total Cost"
